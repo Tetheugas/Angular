@@ -1,13 +1,24 @@
-<mat-toolbar color="">
+<mat-toolbar color="primary">
   <span>CRUD Angular + Spring</span>
 </mat-toolbar>
-<div class="example-label">Raised</div>
-  <div class="example-button-row">
-    <button mat-raised-button>Basic</button>
-    <button mat-raised-button color="primary">Primary</button>
-    <button mat-raised-button color="accent">Accent</button>
-    <button mat-raised-button color="warn">Warn</button>
-    <button mat-raised-button disabled>Disabled</button>
-    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
-  </div>
+<mat-card class="card-class">
+  <mat-card-header>
+    <mat-card-title>Samambaia</mat-card-title>
+    <mat-card-subtitle>Plant</mat-card-subtitle>
+
+  </mat-card-header>
+  <img src="https://blog.cobasi.com.br/wp-content/uploads/2020/10/samambaia-1024x870.png">
+  <mat-card-content>
+    <p >
+      beautiful plant
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button ><mat-icon><span class="material-symbols-outlined">
+      attach_money
+      </span></mat-icon>Buy</button>
+  </mat-card-actions>
+  <mat-card-footer></mat-card-footer>
+</mat-card>
+
 <router-outlet></router-outlet>
