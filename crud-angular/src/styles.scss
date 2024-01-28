@@ -17,13 +17,13 @@ $my-theme: mat.define-light-theme((
 
 @include mat.all-component-themes($my-theme);
 
-.card-class {
+/*.card-class {
   margin: 3%;
   width: 28%;
   text-align: left;
   float: left;
   max-width: 400px;
-}
+}*/
 
 
 

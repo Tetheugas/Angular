@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
+
 
 import { PlantsRoutingModule } from './plants-routing.module';
 import { PlantsComponent } from './plants/plants.component';
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { PlantsComponent } from './plants/plants.component';
   imports: [
     CommonModule,
     PlantsRoutingModule,
-    MatTableModule
+    AppMaterialModule
   ]
 })
 export class PlantsModule { }
