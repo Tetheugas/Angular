@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { PlantsService } from './../services/plants.service';
+import { Component, OnInit, inject } from '@angular/core';
 import { Plant } from '../model/plant';
 
 @Component({
@@ -7,12 +8,15 @@ import { Plant } from '../model/plant';
   styleUrl: './plants.component.scss'
 })
 export class PlantsComponent implements OnInit{
-  plants: Plant[] = [{
-    _id: '1', name: 'Samambaia', category: 'Easy'
-  }];
+  plants: Plant[] = [];
   displayedColumns = ['name', 'category'];
 
-  constructor(){/*this.plants = [];*/}
+
+  constructor(private plantsService: PlantsService){
+    /*this.plants = [];*/
+
+    this.plants = this.plantsService.list()
+  }
 
   ngOnInit(): void {
   }
