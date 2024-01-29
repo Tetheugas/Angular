@@ -25,7 +25,8 @@ import { Routes, provideRouter } from '@angular/router';
   ],
   providers: [
     provideClientHydration(),
-
+    provideAnimations(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })

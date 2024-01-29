@@ -1,6 +1,7 @@
 import { PlantsService } from './../services/plants.service';
 import { Component, OnInit, inject } from '@angular/core';
 import { Plant } from '../model/plant';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-plants',
@@ -8,7 +9,7 @@ import { Plant } from '../model/plant';
   styleUrl: './plants.component.scss'
 })
 export class PlantsComponent implements OnInit{
-  plants: Plant[] = [];
+  plants: Observable<Plant[]>;
   displayedColumns = ['name', 'category'];
 
 

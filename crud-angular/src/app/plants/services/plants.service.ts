@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Plant } from '../model/plant';
 import { HttpClient } from '@angular/common/http';
+import { first, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlantsService {
 
-  constructor(private HttpClient: HttpClient) { }
+  private readonly API = '/assets/plants.json';
 
-  list(): Plant[] {
-    return [
-      {_id: '1', name: 'Samambaia', category: 'Easy'}
-    ];
-  }
-}
+  constructor(private httpClient: HttpClient) { }
+
+  list() {
+    return this.httpClient.get<Plant[]>(this.API)
+    .pipe(
+      first(),
+      tap(plants => console.log(plants))
+    );
+}}
