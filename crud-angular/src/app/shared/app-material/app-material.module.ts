@@ -5,6 +5,10 @@ import { MatCommonModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 
 
 
@@ -15,7 +19,9 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
 
   ],
 

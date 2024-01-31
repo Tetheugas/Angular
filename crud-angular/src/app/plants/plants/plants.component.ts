@@ -9,14 +9,14 @@ import { Observable } from 'rxjs';
   styleUrl: './plants.component.scss'
 })
 export class PlantsComponent implements OnInit{
-  plants: Observable<Plant[]>;
+  plants$: Observable<Plant[]>;
   displayedColumns = ['name', 'category'];
 
 
   constructor(private plantsService: PlantsService){
     /*this.plants = [];*/
 
-    this.plants = this.plantsService.list()
+    this.plants$ = this.plantsService.list()
   }
 
   ngOnInit(): void {
