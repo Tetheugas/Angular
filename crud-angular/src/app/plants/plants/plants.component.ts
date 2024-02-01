@@ -1,7 +1,9 @@
 import { PlantsService } from './../services/plants.service';
 import { Component, OnInit, inject } from '@angular/core';
 import { Plant } from '../model/plant';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-plants',
@@ -13,10 +15,23 @@ export class PlantsComponent implements OnInit{
   displayedColumns = ['name', 'category'];
 
 
-  constructor(private plantsService: PlantsService){
+  constructor(private plantsService: PlantsService,
+    public dialog: MatDialog){
     /*this.plants = [];*/
 
     this.plants$ = this.plantsService.list()
+    .pipe(
+      catchError(error => {
+        this.onError('Erro ao carregar itens')
+        return of([])
+      })
+    )
+  }
+
+  onError(errorMsg: string) {
+    this.dialog.open(ErrorDialogComponent, {
+      data: errorMsg,
+    });
   }
 
   ngOnInit(): void {
