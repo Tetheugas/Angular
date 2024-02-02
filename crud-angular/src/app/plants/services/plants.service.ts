@@ -8,7 +8,7 @@ import { delay, first, tap } from 'rxjs/operators';
 })
 export class PlantsService {
 
-  private readonly API = '/assets/palants.json';
+  private readonly API = '/assets/plants.json';
 
   constructor(private httpClient: HttpClient) { }
 
