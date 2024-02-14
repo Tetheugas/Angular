@@ -1,9 +1,12 @@
 import { PlantsService } from './../services/plants.service';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Plant } from '../model/plant';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-plants',
@@ -12,11 +15,14 @@ import { ErrorDialogComponent } from '../../shared/components/error-dialog/error
 })
 export class PlantsComponent implements OnInit{
   plants$: Observable<Plant[]>;
-  displayedColumns = ['name', 'category'];
+  displayedColumns = ['name','category','actions'];
 
 
   constructor(private plantsService: PlantsService,
-    public dialog: MatDialog){
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
+    ){
     /*this.plants = [];*/
 
     this.plants$ = this.plantsService.list()
@@ -26,6 +32,7 @@ export class PlantsComponent implements OnInit{
         return of([])
       })
     )
+
   }
 
   onError(errorMsg: string) {
@@ -36,5 +43,7 @@ export class PlantsComponent implements OnInit{
 
   ngOnInit(): void {
   }
+
+  
 
 }
