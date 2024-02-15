@@ -8,6 +8,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 
 @NgModule({
@@ -21,6 +25,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+
   ],
 })
 export class AppMaterialModule {}

@@ -6,9 +6,10 @@ import { PlantsComponent } from './plants/plants.component';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { PlantFormComponent } from './plant-form/plant-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PlantsComponent, PlantFormComponent],
-  imports: [CommonModule, PlantsRoutingModule, AppMaterialModule, SharedModule],
+  imports: [CommonModule, PlantsRoutingModule, AppMaterialModule, SharedModule, ReactiveFormsModule],
 })
 export class PlantsModule {}
