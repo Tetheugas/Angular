@@ -6,8 +6,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
 
 
 @NgModule({
-  declarations: [ErrorDialogComponent],
-  imports: [CommonModule, AppMaterialModule],
-  exports: [ErrorDialogComponent],
+    imports: [CommonModule, AppMaterialModule, ErrorDialogComponent],
+    exports: [ErrorDialogComponent],
 })
 export class SharedModule { }

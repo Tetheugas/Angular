@@ -9,7 +9,6 @@ import { PlantFormComponent } from './plant-form/plant-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [PlantsComponent, PlantFormComponent],
-  imports: [CommonModule, PlantsRoutingModule, AppMaterialModule, SharedModule, ReactiveFormsModule],
+    imports: [CommonModule, PlantsRoutingModule, AppMaterialModule, SharedModule, ReactiveFormsModule, PlantsComponent, PlantFormComponent],
 })
 export class PlantsModule {}
