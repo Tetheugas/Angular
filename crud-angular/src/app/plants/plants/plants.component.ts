@@ -4,14 +4,23 @@ import { Plant } from '../model/plant';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { MatIcon } from '@angular/material/icon';
+import { MatMiniFabButton, MatIconButton } from '@angular/material/button';
+import { MatTable, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow } from '@angular/material/table';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatCard } from '@angular/material/card';
 
 
 
 @Component({
-  selector: 'app-plants',
-  templateUrl: './plants.component.html',
-  styleUrl: './plants.component.scss'
+    selector: 'app-plants',
+    templateUrl: './plants.component.html',
+    styleUrl: './plants.component.scss',
+    standalone: true,
+    imports: [MatCard, MatToolbar, NgIf, MatTable, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell, RouterLink, MatMiniFabButton, MatIcon, MatIconButton, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow, MatProgressSpinner, AsyncPipe]
 })
 export class PlantsComponent implements OnInit{
   plants$: Observable<Plant[]>;
@@ -44,6 +53,6 @@ export class PlantsComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  
+
 
 }

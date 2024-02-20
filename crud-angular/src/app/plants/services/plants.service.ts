@@ -16,7 +16,7 @@ export class PlantsService {
     return this.httpClient.get<Plant[]>(this.API)
     .pipe(
       first(),
-      delay(1000),
+      delay(500),
       tap(plants => console.log(plants))
     );
 }}
