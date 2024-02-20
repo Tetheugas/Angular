@@ -5,7 +5,7 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppMaterialModule } from './shared/app-material/app-material.module';
+
 import { Routes, provideRouter } from '@angular/router';
 
 
@@ -19,10 +19,8 @@ import { Routes, provideRouter } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterialModule,
     HttpClientModule
-
-  ],
+],
   providers: [
     provideClientHydration(),
     provideAnimations(),
