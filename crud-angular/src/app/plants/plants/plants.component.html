@@ -17,11 +17,9 @@
       <!--- Actions Column --->
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>
-          <a routerLink="/plants/new">
-            <button mat-mini-fab color="primary" aria-label="To add a plant">
-              <mat-icon>add</mat-icon>
-            </button>
-          </a>
+          <button mat-mini-fab color="primary" aria-label="To add a plant" (click)="onAdd()">
+            <mat-icon>add</mat-icon>
+          </button>
         </mat-header-cell>
 
         <mat-cell *matCellDef="let plant">

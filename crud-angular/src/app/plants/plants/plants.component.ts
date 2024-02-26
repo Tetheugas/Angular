@@ -49,6 +49,9 @@ export class PlantsComponent implements OnInit{
       data: errorMsg,
     });
   }
+  onAdd() {
+    this.router.navigate(['new'], {relativeTo: this.route});
+  }
 
   ngOnInit(): void {
   }
