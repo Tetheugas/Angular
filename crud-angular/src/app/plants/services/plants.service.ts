@@ -19,9 +19,9 @@ export class PlantsService {
       delay(500),
       tap(plants => console.log(plants))
     );
-  }
+}
   save(record: Plant) {
-    return this.httpClient.post<Plant>(this.API, record).pipe(first());
+    return this.httpClient.post<Plant>(this.API, record);
   }
 
 }
