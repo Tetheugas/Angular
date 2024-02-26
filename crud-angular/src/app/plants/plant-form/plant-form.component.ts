@@ -12,6 +12,7 @@ import {
 import { MatSelectModule } from '@angular/material/select';
 import { PlantsService } from '../services/plants.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-plant-form',
@@ -37,7 +38,8 @@ export class PlantFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private service: PlantsService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private location: Location
   ) {
     this.form = this.formBuilder.group({
       name: [null],
@@ -47,17 +49,23 @@ export class PlantFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onCancel() {
-    throw new Error('Method not implemented.');
-  }
+
+
   onSubmit() {
     this.service
       .save(this.form.value)
-      .subscribe((result) => console.log(result), error => this.onError());
+      .subscribe((result) => this.onSuccess(), error => this.onError());
   }
 
+  onCancel() {
+    this.location.back();
+  }
+
+  private onSuccess() {
+    this.snackBar.open('Success when saving the plant', '', {duration: 5000});
+    this.onCancel();
+  }
   private onError() {
     this.snackBar.open('Error when saving the plant', '', {duration: 5000});
-
   }
 }
